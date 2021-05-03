@@ -70,7 +70,7 @@ public class UserService {
 
     //Insert User
     public void insertUser(User user) {
-        String query = "insert into user (fullname, address, phonenumber, username, password)" + "values(?,?,?,?,?";
+        String query = "insert into user (fullname, address, phonenumber, username, password)" + "values(?,?,?,?,?)";
 
         PreparedStatement pstm = new DBConnection().getStatement(query);
         try {

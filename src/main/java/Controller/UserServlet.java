@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet(name = "UserServlet", value = "/UserServlet")
@@ -100,6 +101,62 @@ public class UserServlet extends HttpServlet {
 
            // RequestDispatcher rd =request.getRequestDispatcher("Pages/list_user.jsp");
         }
+
+        //Edit
+
+        if (action.equalsIgnoreCase(("editUser"))){
+
+            User user = new User();
+            int id = Integer.parseInt(request.getParameter("id"));
+            user.setFullname(request.getParameter("fullname"));
+            user.setAddress(request.getParameter("address"));
+            user.setPhonenumber(request.getParameter("phonenumber"));
+            user.setUsername(request.getParameter("username"));
+            user.setPassword(request.getParameter("password"));
+
+            try{
+                new UserService().editUser(id, user);
+            }
+            catch (SQLException e){
+                e.printStackTrace();
+            }
+
+            List<User> userList = new UserService().getUserList();
+            request.setAttribute("userList",userList);
+
+            RequestDispatcher rd = request.getRequestDispatcher("Pages/list_user");
+            rd.forward(request,response);
+        }
+
+        if (action.equalsIgnoreCase("listUser")){
+
+            User user = new User();
+            List<User> userList = new UserService().getUserList();
+            request.setAttribute("userList", userList);
+            request.setAttribute("user", user);
+            RequestDispatcher rd = request.getRequestDispatcher("Pages/list_user.jsp");
+            rd.forward(request,response);
+        }
+
+        if (action.equalsIgnoreCase("userEdit")){
+            int id = Integer.parseInt(request.getParameter("id"));
+            System.out.println(id);
+
+            User user = new UserService().getRow(id);
+            request.setAttribute("id",id);
+            request.setAttribute("user",user);
+
+            RequestDispatcher rd = request.getRequestDispatcher("Pages/update_user.jsp");
+            rd.forward(request,response);
+        }
+
+        if (action.equalsIgnoreCase("home")){
+
+            RequestDispatcher rd = request.getRequestDispatcher("pages/dashboard.jsp");
+            rd.forward(request,response);
+        }
+
+
     }
 
     @Override
