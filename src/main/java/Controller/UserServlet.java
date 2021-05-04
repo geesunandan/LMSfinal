@@ -45,7 +45,7 @@ public class UserServlet extends HttpServlet {
             }
         }
 
-        // Redirects to register.jspt
+        // Redirects to register.jsp
         if (action.equalsIgnoreCase("newUsers")){
             RequestDispatcher rd = request.getRequestDispatcher("Pages/register.jsp");
             rd.forward(request,response);

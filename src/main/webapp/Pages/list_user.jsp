@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -10,6 +9,8 @@
 <html>
 <head>
     <title>Table</title>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 </head>
 <body>
 <table width="100%">
