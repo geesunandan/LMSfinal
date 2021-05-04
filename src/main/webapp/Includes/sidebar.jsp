@@ -19,6 +19,12 @@
         <li>
             <a href="user?page=listUser">Users</a>
         </li>
+        <li>
+            <a href="books?page=listBooks">Books</a>
+        </li>
+        <li>
+            <a href="books?page=newBooks">Add Books</a>
+        </li>
 
         <li>
             <a href="user?page=logout">Logout</a>
