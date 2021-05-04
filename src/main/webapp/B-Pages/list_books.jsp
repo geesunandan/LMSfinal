@@ -29,6 +29,9 @@
             <td> ${books.author}</td>
             <td> ${books.genre}</td>
             <td> ${books.rackno}</td>
+            <td> <a href="books?page=deleteBook&id=${books.id}"> Delete</a> </td>
+            <td> <a href="books?page=bookEdit&id=${books.id}"> Edit</a> </td>
+
         </tr>
     </c:forEach>
     <tr>

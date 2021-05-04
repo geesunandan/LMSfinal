@@ -30,11 +30,14 @@
             <td> ${user.phonenumber}</td>
             <td> ${user.username}</td>
             <td> ${user.password}</td>
+            <td> <a href="user?page=deleteUser&id=${user.id}"> Delete</a> </td>
+            <td> <a href="user?page=userEdit&id=${user.id}"> Edit</a> </td>
+
         </tr>
         </c:forEach>
     <tr>
         <td> <a href="user?page=newUsers"> Add User </a> </td>
-    </tr>
+        </tr>
 </table>
 
 </body>

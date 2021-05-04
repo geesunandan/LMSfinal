@@ -10,11 +10,11 @@
 <head>
     <title>Title</title>
 </head>
+<body>
 <div id="wrapper">
 
     <%--    <%@include file=""%>--%>
     <div class="container">
-        <input type="hidden" name="id" value="${books.id}">
 
         <h1> Books Registration Form</h1>
         <form action="user?page=editUser" method="post">
@@ -38,7 +38,7 @@
                 <input type="password" name="password" value="${user.password}" placeholder="Enter a password">
             </div>
 
-            <input type="submit" value="Update User" name="submit">
+            <input type="submit" value="Update" name="submit">
             <input type="reset" value="Reset" name="reset">
 
         </form>

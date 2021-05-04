@@ -99,7 +99,8 @@ public class UserServlet extends HttpServlet {
             List<User> userList = new UserService().getUserList();
             request.setAttribute("userList", userList);
 
-           // RequestDispatcher rd =request.getRequestDispatcher("Pages/list_user.jsp");
+            RequestDispatcher rd =request.getRequestDispatcher("Pages/list_user.jsp");
+            rd.forward(request,response);
         }
 
         //Edit
