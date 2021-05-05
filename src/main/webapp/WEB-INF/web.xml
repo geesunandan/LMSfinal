@@ -11,4 +11,14 @@
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>BooksServlet</servlet-name>
+        <servlet-class>Controller.BooksServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BooksServlet</servlet-name>
+        <url-pattern>/BooksServlet</url-pattern>
+    </servlet-mapping>
+    
+    
 </web-app>

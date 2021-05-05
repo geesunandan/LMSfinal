@@ -14,7 +14,7 @@
 </head>
 <body>
 <%@include file="../Includes/sidebar.jsp" %>
-<h1>Welcome <%= session.getAttribute("fullname")%> </h1>
+<h1>Welcome ${user.fullname}</h1>
 
 </body>
 </html>
